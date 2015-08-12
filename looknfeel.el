@@ -10,6 +10,8 @@
 (prefer-coding-system 'utf-8)
 (setq column-number-mode t)
 
+(ido-mode)
+
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"
   (interactive)

@@ -6,7 +6,6 @@
 
 (load-file "~/emacs/custom.el")
 
-
 ;; External modules
 (load-file "~/emacs/external/xml-parse.el")
 (load-file "~/emacs/external/noflet.el")

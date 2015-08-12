@@ -1,36 +1,41 @@
 (require 'package)
 
-(add-to-list 'load-path "~/emacs")
+(add-to-list 'load-path "~/emacs/")
 
 ;(load-file "~/.emacs/elpa/load-relative-1.2/load-relative.el")
 
+(load-file "~/emacs/custom.el")
+
+
 ;; External modules
-(load-file "external/xml-parse.el")
-(load-file "external/noflet.el")
-(load-file "external/kill-ring-ido.el")
-(load-file "external/doxymacs.el")
-(load-file "external/protobuf.el")
-;(load-file "external/theme.el")
+(load-file "~/emacs/external/xml-parse.el")
+(load-file "~/emacs/external/noflet.el")
+(load-file "~/emacs/external/kill-ring-ido.el")
+(load-file "~/emacs/external/doxymacs.el")
+(load-file "~/emacs/external/protobuf.el")
 
 
 ;; Custom modules
-(load-file "modules/whitespace-cfg.el")
-(load-file "modules/move-text.el")
+(load-file "~/emacs/modules/whitespace-cfg.el")
+(load-file "~/emacs/modules/move-text.el")
+
+;(load-file "themes/wombat-customized.el")
 
 ;; Configuration
-(load-file "packages.el")
-(load-file "looknfeel.el")
-(load-file "editing.el")
+(load-file "~/emacs/packages.el")
+(load-file "~/emacs/looknfeel.el")
+(load-file "~/emacs/editing.el")
+(load-file "~/emacs/persistence.el")
 
 
 ;; Languages
-(load-file "languages/c.el")
+(load-file "~/emacs/languages/c.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (require 'company)
+(require 'projectile)
 (global-company-mode)
-(projectile-global-mode)
 
 ;; needed for ag-project
 (defun project-root-helper (foo)
@@ -46,7 +51,6 @@
 (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
 
 ;(load-file "~/.emacs.d/epy/epy-init.el")
-
 
 (defun process-error-filename (filename)
   (let ((case-fold-search t))
@@ -66,4 +70,6 @@
 (require 'protobuf)
 
 
-(load-file "keybindings.el")
+(load-file "~/emacs/keybindings.el")
+
+(projectile-global-mode t)

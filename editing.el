@@ -2,8 +2,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Global editing defaults
 
-;(global-set-key (kbd "M-up") 'move-text-up)
-;(global-set-key (kbd "M-down") 'move-text-down)
+(global-set-key [M-up] 'move-text-up)
+(global-set-key [M-down] 'move-text-down)
 
 (setq default-tab-width 4) ; tab-width is 4
 (global-set-key (kbd "C-S-s") 'ioccur)

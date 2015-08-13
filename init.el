@@ -2,9 +2,9 @@
 
 (add-to-list 'load-path "~/emacs/")
 
-;(load-file "~/.emacs/elpa/load-relative-1.2/load-relative.el")
+(load-theme 'wombat)
 
-(load-file "~/emacs/custom.el")
+;(load-file "~/.emacs/elpa/load-relative-1.2/load-relative.el")
 
 ;; External modules
 (load-file "~/emacs/external/xml-parse.el")
@@ -29,6 +29,10 @@
 
 ;; Languages
 (load-file "~/emacs/languages/c.el")
+
+(load-file "~/emacs/custom.el")
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff

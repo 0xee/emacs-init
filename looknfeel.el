@@ -10,7 +10,7 @@
 (prefer-coding-system 'utf-8)
 (setq column-number-mode t)
 
-(ido-mode)
+(ido-mode t)
 
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"
@@ -22,6 +22,7 @@
     (message "Canceled exit")))
 
 (global-set-key (kbd "C-x C-c") 'ask-before-closing)
+(global-set-key (kbd "C-x b") 'ido-switch-buffer)
 
 ;; File management
 (setq backup-inhibited t)         ; disable funny backup file

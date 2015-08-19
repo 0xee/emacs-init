@@ -26,9 +26,9 @@
 (load-file "~/emacs/editing.el")
 (load-file "~/emacs/persistence.el")
 
-
 ;; Languages
 (load-file "~/emacs/languages/c.el")
+(load-file "~/emacs/languages/python.el")
 
 (load-file "~/emacs/custom.el")
 

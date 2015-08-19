@@ -9,6 +9,10 @@
 
 (setq whitespace-style '(face tabs trailing lines-tail))
 
-(add-hook 'prog-mode-hook 'whitespace-mode)
+(defun my-ws-mode-hook ()
+  (set-variable 'indent-tabs-mode nil)
+  (whitespace-mode)
+)
+(add-hook 'prog-mode-hook 'my-ws-mode-hook)
 
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)

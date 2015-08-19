@@ -67,6 +67,9 @@
 (set-variable 'visible-cursor nil)
 (set-variable 'void-text-area-pointer (quote arrow))
 
+(set-variable 'vc-log-show-limit 100)
+
+
 
 (set-face-foreground 'ido-subdir "ccaa8f")
 (set-face-foreground 'ido-only-match "ForestGreen")

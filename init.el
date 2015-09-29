@@ -17,6 +17,7 @@
 ;; Custom modules
 (load-file "~/emacs/modules/whitespace-cfg.el")
 (load-file "~/emacs/modules/move-text.el")
+(load-file "~/emacs/modules/date.el")
 
 ;(load-file "themes/wombat-customized.el")
 
@@ -32,6 +33,9 @@
 
 (load-file "~/emacs/custom.el")
 
+
+;; import stuff like user name,...
+(load-file "~/.emacs.d/user.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff

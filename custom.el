@@ -69,6 +69,14 @@
 
 (set-variable 'vc-log-show-limit 100)
 
+(set-variable 'dabbrev-case-fold-search t)
+(set-variable 'delete-selection-mode nil)
+(set-variable 'irony-supported-major-modes (quote (c++-mode c-mode objc-mode protobuf-mode)))
+(set-variable 'mark-even-if-inactive t)
+(set-variable 'python-shell-interpreter "ipython")
+(set-variable 'scroll-bar-mode (quote right))
+(set-variable 'transient-mark-mode 1)
+
 
 
 (set-face-foreground 'ido-subdir "ccaa8f")

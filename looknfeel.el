@@ -26,6 +26,7 @@
 
 ;; File management
 (setq backup-inhibited t)         ; disable funny backup file
+(setq create-lockfiles nil)         ; disable funny backup file
 (setq auto-save-default nil)      ; disable auto-save feature
 
 
@@ -43,3 +44,15 @@
  )
 
 (setq compilation-finish-function 'colorize-compilation)
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-c l") 'ace-jump-line-mode)
+
+(load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
+(define-key global-map (kbd "C-x z") 'zoom-window-zoom)
+
+(require 'dedicated)
+(define-key global-map (kbd "C-x d") 'dedicated-mode)
+
+(winner-mode 1)

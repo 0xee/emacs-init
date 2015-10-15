@@ -56,8 +56,6 @@
   '(add-to-list 'company-backends 'company-irony))
 (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
 
-;(load-file "~/.emacs.d/epy/epy-init.el")
-
 (defun process-error-filename (filename)
   (let ((case-fold-search t))
     (setq f (replace-regexp-in-string "build/"

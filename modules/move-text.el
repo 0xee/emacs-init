@@ -33,6 +33,9 @@
   "Move region (transient-mark-mode active) or current line
   arg lines up."
   (interactive "*p")
-  (move-text-internal (- arg)))
+  (move-text-internal (- arg))
+  (if (not (use-region-p))  ; for some reason, this seems to be needed
+      (previous-line))      ; on emacs >=24.5
+  )
 
 (provide 'move-text)

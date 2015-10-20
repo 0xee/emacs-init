@@ -9,8 +9,10 @@
 (set-keyboard-coding-system 'utf-8) ; use utf8 for input
 (prefer-coding-system 'utf-8)
 (setq column-number-mode t)
-
+(show-paren-mode t)
+(setq show-paren-style 'expression)
 (ido-mode t)
+(set-face-background 'show-paren-match-face "#383838")
 
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"

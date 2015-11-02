@@ -12,7 +12,7 @@
 (show-paren-mode t)
 (setq show-paren-style 'expression)
 (ido-mode t)
-(set-face-background 'show-paren-match-face "#383838")
+(set-face-background 'show-paren-match-face "#382C2C")
 
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"
@@ -58,3 +58,11 @@
 (define-key global-map (kbd "C-x d") 'dedicated-mode)
 
 (winner-mode 1)
+
+(global-set-key (kbd "<f12>")                                ;; switch to ...
+  (lambda()(interactive)                                     ;; ... *scratch*
+    (switch-to-buffer (get-buffer-create "*scratch*"))))
+
+(set-frame-parameter nil 'unsplittable t)
+
+(global-flycheck-mode)

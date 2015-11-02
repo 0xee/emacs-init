@@ -29,12 +29,23 @@
   (local-set-key (kbd "C-c q") 'ede-proj-regenerate)
 ;  (local-set-key (kbd "C-c p") 'semantic-analyze-proto-impl-toggle)
   (local-set-key (kbd "C-c w") 'senator-copy-tag)
-  (local-set-key "\C-cf" 'senator-fold-tag-toggle)
 ;  (global-semantic-stickyfunc-mode)
   (setq-local cc-search-directories
               (list "." "/usr/include" "/opt/ims/include" "~/svn/netlib/trunk/src"
                     (concat (projectile-project-root) "src")))
-  (irony-mode))
+  (irony-mode)
+  (subword-mode)
+  (flycheck-mode)
+  (setq flycheck-clang-include-path
+        (list "." ".." "../.." "../../.."
+              (concat (projectile-project-root) "src")
+              (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
+              "/opt/ims/include/netlib"
+              "/opt/ims/include/oasis"
+              "/opt/cuda/include"
+              "/opt/ofed/include"))
+)
+
 
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cui\\'" . c++-mode))
@@ -45,6 +56,10 @@
 
 ;; semantic
 
+;(add-hook 'c-mode-hook (lambda () (set flycheck-clang-include-path (list "." ".." "../.." "../../.."))))
+                                        ;(concat (projectile-project-root) "/src"))))
+
+
 (require 'cc-mode)
 ;(require 'semantic)
 
@@ -52,3 +67,10 @@
 ;; (global-semantic-idle-scheduler-mode 1)
 
 ;; (semantic-mode 1)
+
+(defun switch-to-flycheck-error-list ()
+  (interactive)
+  (switch-to-buffer-other-window "*Flycheck errors*")
+)
+
+(global-set-key (kbd "C-c C-f") 'switch-to-flycheck-error-list)

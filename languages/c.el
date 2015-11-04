@@ -17,19 +17,9 @@
 ;;; C/C++ development
 
 (defun my-c-hook ()
-
-  ;; (semantic-add-system-include "../include" 'c++-mode)
-  ;; (semantic-add-system-include "../../include" 'c++-mode)
-  ;; (semantic-add-system-include "../../../include" 'c++-mode)
-  ;; (semantic-add-system-include "../../../../include" 'c++-mode)
   (local-set-key (kbd "C-c u") 'uncomment-region)
-;  (local-set-key (kbd "C-c z") 'semantic-ia-fast-jump)
-;  (local-set-key (kbd "C-c i") 'semantic-decoration-include-visit)
-  (local-set-key (kbd "C-c r") 'ede-run-target)
-  (local-set-key (kbd "C-c q") 'ede-proj-regenerate)
-;  (local-set-key (kbd "C-c p") 'semantic-analyze-proto-impl-toggle)
-  (local-set-key (kbd "C-c w") 'senator-copy-tag)
-;  (global-semantic-stickyfunc-mode)
+  (local-unset-key (kbd "C-c C-n"))
+  (local-unset-key (kbd "C-c C-p"))
   (setq-local cc-search-directories
               (list "." "/usr/include" "/opt/ims/include" "~/svn/netlib/trunk/src"
                     (concat (projectile-project-root) "src")))
@@ -54,19 +44,11 @@
 
 (add-hook 'c-mode-common-hook 'my-c-hook)
 
-;; semantic
-
 ;(add-hook 'c-mode-hook (lambda () (set flycheck-clang-include-path (list "." ".." "../.." "../../.."))))
                                         ;(concat (projectile-project-root) "/src"))))
 
 
 (require 'cc-mode)
-;(require 'semantic)
-
-;; (global-semanticdb-minor-mode 1)
-;; (global-semantic-idle-scheduler-mode 1)
-
-;; (semantic-mode 1)
 
 (defun switch-to-flycheck-error-list ()
   (interactive)

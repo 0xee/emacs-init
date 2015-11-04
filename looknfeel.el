@@ -1,5 +1,6 @@
 
 ;;; Look & feel
+;(setq debug-on-quit t)
 
 (tool-bar-mode 0)                 ; disable tool bar
 (blink-cursor-mode 0)
@@ -66,3 +67,25 @@
 (set-frame-parameter nil 'unsplittable t)
 
 (global-flycheck-mode)
+
+(require 'flycheck-tip)
+
+; TODO: make this work
+(define-key flycheck-mode-map flycheck-keymap-prefix nil)
+(setq flycheck-keymap-prefix (kbd "C-;"))
+(define-key flycheck-mode-map flycheck-keymap-prefix
+                flycheck-command-map)
+
+
+(defun check-cpp()
+  (interactive)
+  (flycheck-compile (flycheck-get-checker-for-buffer))
+)
+
+(defun my-flycheck-hook ()
+  (local-set-key (kbd "C-c C-n") 'flycheck-tip-cycle)
+  (local-set-key (kbd "C-c C-p") 'flycheck-tip-cycle-reverse)
+  (local-set-key (kbd "<f9>") 'check-cpp)
+  )
+
+(add-hook 'flycheck-mode-hook 'my-flycheck-hook)

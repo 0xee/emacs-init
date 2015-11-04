@@ -4,7 +4,7 @@
 
 (load-theme 'wombat)
 
-;(load-file "~/.emacs/elpa/load-relative-1.2/load-relative.el")
+(load-file "~/.emacs.d/elpa/load-relative-1.2/load-relative.el")
 
 ;; External modules
 (load-file "~/emacs/external/xml-parse.el")
@@ -30,6 +30,7 @@
 ;; Languages
 (load-file "~/emacs/languages/c.el")
 (load-file "~/emacs/languages/python.el")
+(load-file "~/emacs/languages/haskell.el")
 
 (load-file "~/emacs/custom.el")
 

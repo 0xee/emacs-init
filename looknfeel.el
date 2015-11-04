@@ -60,10 +60,16 @@
 
 (winner-mode 1)
 
+
 (global-set-key (kbd "<f12>")                                ;; switch to ...
   (lambda()(interactive)                                     ;; ... *scratch*
     (switch-to-buffer (get-buffer-create "*scratch*"))))
 
+(defun my-projectile-hook ()
+  (local-set-key (kbd "C-c p s") 'projectile-switch-project))
+
+
+<<<<<<< variant A
 (set-frame-parameter nil 'unsplittable t)
 
 (global-flycheck-mode)
@@ -96,3 +102,5 @@
   )
 
 (add-hook 'compilation-mode-hook 'my-compilation-hook)
+
+(add-hook 'projectile-mode-hook 'my-projectile-hook)

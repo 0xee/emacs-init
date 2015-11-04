@@ -89,3 +89,10 @@
   )
 
 (add-hook 'flycheck-mode-hook 'my-flycheck-hook)
+
+
+(defun my-compilation-hook ()
+  (local-set-key (kbd "q") (lambda () (interactive) (quit-window t)))
+  )
+
+(add-hook 'compilation-mode-hook 'my-compilation-hook)

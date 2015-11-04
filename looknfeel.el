@@ -68,8 +68,6 @@
 (defun my-projectile-hook ()
   (local-set-key (kbd "C-c p s") 'projectile-switch-project))
 
-
-<<<<<<< variant A
 (set-frame-parameter nil 'unsplittable t)
 
 (global-flycheck-mode)

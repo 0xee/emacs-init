@@ -1,39 +1,38 @@
-(require 'package)
-
-(add-to-list 'load-path "~/emacs/")
-
 (load-theme 'wombat)
+
+(require 'package)
 
 (load-file "~/.emacs.d/elpa/load-relative-1.2/load-relative.el")
 
-;; External modules
-(load-file "~/emacs/external/xml-parse.el")
-(load-file "~/emacs/external/noflet.el")
-(load-file "~/emacs/external/kill-ring-ido.el")
-(load-file "~/emacs/external/doxymacs.el")
-(load-file "~/emacs/external/protobuf.el")
+(load-relative "external/xml-parse.el")
 
+;; External modules
+(load-relative "external/xml-parse.el")
+(load-relative "external/noflet.el")
+(load-relative "external/kill-ring-ido.el")
+(load-relative "external/doxymacs.el")
+(load-relative "external/protobuf.el")
 
 ;; Custom modules
-(load-file "~/emacs/modules/whitespace-cfg.el")
-(load-file "~/emacs/modules/move-text.el")
-(load-file "~/emacs/modules/date.el")
+(load-relative "modules/whitespace-cfg.el")
+(load-relative "modules/move-text.el")
+(load-relative "modules/date.el")
 
-;(load-file "themes/wombat-customized.el")
+;(load-relative "themes/wombat-customized.el")
 
 ;; Configuration
-(load-file "~/emacs/packages.el")
-(load-file "~/emacs/looknfeel.el")
-(load-file "~/emacs/editing.el")
-(load-file "~/emacs/persistence.el")
+(load-relative "packages.el")
+(load-relative "looknfeel.el")
+(load-relative "editing.el")
+(load-relative "persistence.el")
 
 ;; Languages
-(load-file "~/emacs/languages/c.el")
-(load-file "~/emacs/languages/python.el")
-(load-file "~/emacs/languages/haskell.el")
+(load-relative "languages/c.el")
+(load-relative "languages/python.el")
+(load-relative "languages/haskell.el")
 
-(load-file "~/emacs/custom.el")
-(load-file "projectile-cfg.el")
+(load-relative "custom.el")
+(load-relative "projectile-cfg.el")
 
 
 ;; import stuff like user name,...
@@ -42,7 +41,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (require 'company)
-
 (global-company-mode)
 
 
@@ -68,10 +66,7 @@
 (setq compilation-parse-errors-filename-function 'process-error-filename)
 
 
-
 (require 'protobuf)
 
 
-(load-file "~/emacs/keybindings.el")
-
-(projectile-global-mode t)
+(load-file "keybindings.el")

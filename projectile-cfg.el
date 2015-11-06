@@ -1,4 +1,8 @@
 
+(require 'projectile)
+
+
+(projectile-global-mode t)
 
 (define-key projectile-mode-map (kbd "C-c p s") 'projectile-switch-project)
 (define-key projectile-mode-map (kbd "C-c c") 'projectile-compile-project)

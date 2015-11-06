@@ -95,10 +95,9 @@
 (add-hook 'flycheck-mode-hook 'my-flycheck-hook)
 
 
-(defun my-compilation-hook ()
+(defun kill-on-quit-hook ()
   (local-set-key (kbd "q") (lambda () (interactive) (quit-window t)))
   )
 
-(add-hook 'compilation-mode-hook 'my-compilation-hook)
-
-(add-hook 'projectile-mode-hook 'my-projectile-hook)
+(add-hook 'compilation-mode-hook 'kill-on-quit-hook)
+(add-hook 'diff-mode-hook 'kill-on-quit-hook)

@@ -33,6 +33,7 @@
 (load-file "~/emacs/languages/haskell.el")
 
 (load-file "~/emacs/custom.el")
+(load-file "projectile-cfg.el")
 
 
 ;; import stuff like user name,...
@@ -41,13 +42,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (require 'company)
-(require 'projectile)
+
 (global-company-mode)
 
-;; needed for ag-project
-(defun project-root-helper (foo)
-  (projectile-project-root)
-)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Package Configuration

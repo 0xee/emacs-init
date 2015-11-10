@@ -101,3 +101,6 @@
 
 (add-hook 'compilation-mode-hook 'kill-on-quit-hook)
 (add-hook 'diff-mode-hook 'kill-on-quit-hook)
+
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-x K") 'ido-kill-buffer)

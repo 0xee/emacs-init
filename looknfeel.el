@@ -56,7 +56,11 @@
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)
 
 (require 'dedicated)
-(define-key global-map (kbd "C-x d") 'dedicated-mode)
+(defun lock-buffer()
+  (interactive)
+  (dedicated-mode)
+  (emacs-lock-mode))
+(define-key global-map (kbd "C-x d") 'lock-buffer)
 
 (winner-mode 1)
 
@@ -64,6 +68,10 @@
 (global-set-key (kbd "<f12>")                                ;; switch to ...
   (lambda()(interactive)                                     ;; ... *scratch*
     (switch-to-buffer (get-buffer-create "*scratch*"))))
+
+(global-set-key (kbd "<f11>")                                ;; switch to ...
+  (lambda()(interactive)                                     ;; ... *scratch*
+    (switch-to-buffer "*compilation*")))
 
 (defun my-projectile-hook ()
   (local-set-key (kbd "C-c p s") 'projectile-switch-project))

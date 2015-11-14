@@ -69,4 +69,4 @@
 (require 'protobuf)
 
 
-(load-file "keybindings.el")
+(load-relative "keybindings.el")

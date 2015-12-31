@@ -54,6 +54,13 @@
 (load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)
 
+(require 'dedicated)
+;; (defun lock-buffer()
+;;   (interactive)
+;;   (dedicated-mode)
+;;   (emacs-lock-mode))
+(define-key global-map (kbd "C-x d") 'dedicated-mode)
+
 (winner-mode 1)
 
 (global-set-key (kbd "<f5>")

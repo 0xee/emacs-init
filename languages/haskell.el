@@ -24,3 +24,5 @@
                                (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
                                )
           )
+
+(load-file "~/.emacs.d/el-get/hamlet-mode/hamlet-mode.el")

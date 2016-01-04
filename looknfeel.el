@@ -56,21 +56,24 @@
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)
 
 (require 'dedicated)
-(defun lock-buffer()
+(defun my-lock-buffer()
   (interactive)
   (dedicated-mode)
   (emacs-lock-mode))
-(define-key global-map (kbd "C-x d") 'lock-buffer)
+(define-key global-map (kbd "C-x d") 'my-lock-buffer)
 
 (winner-mode 1)
 
+(global-set-key (kbd "<f5>")
+  (lambda()(interactive)
+    (revert-buffer nil t)))
 
 (global-set-key (kbd "<f12>")                                ;; switch to ...
   (lambda()(interactive)                                     ;; ... *scratch*
     (switch-to-buffer (get-buffer-create "*scratch*"))))
 
 (global-set-key (kbd "<f11>")                                ;; switch to ...
-  (lambda()(interactive)                                     ;; ... *scratch*
+  (lambda()(interactive)                                     ;; ... *compilation*
     (switch-to-buffer "*compilation*")))
 
 (defun my-projectile-hook ()
@@ -88,8 +91,7 @@
 (define-key flycheck-mode-map flycheck-keymap-prefix
                 flycheck-command-map)
 
-
-(defun check-cpp()
+(defun check-buffer()
   (interactive)
   (flycheck-compile (flycheck-get-checker-for-buffer))
 )
@@ -97,7 +99,7 @@
 (defun my-flycheck-hook ()
   (local-set-key (kbd "C-c C-n") 'flycheck-tip-cycle)
   (local-set-key (kbd "C-c C-p") 'flycheck-tip-cycle-reverse)
-  (local-set-key (kbd "<f9>") 'check-cpp)
+  (local-set-key (kbd "<f9>") 'check-buffer)
   )
 
 (add-hook 'flycheck-mode-hook 'my-flycheck-hook)
@@ -106,6 +108,7 @@
 (defun kill-on-quit-hook ()
   (local-set-key (kbd "q") (lambda () (interactive) (quit-window t)))
   )
+
 
 (add-hook 'compilation-mode-hook 'kill-on-quit-hook)
 (add-hook 'diff-mode-hook 'kill-on-quit-hook)

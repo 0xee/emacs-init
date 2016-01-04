@@ -89,7 +89,8 @@
 (set-variable 'company-backends
    (quote
     (company-irony company-elisp company-bbdb company-nxml company-css company-eclim company-semantic company-clang company-xcode company-ropemacs company-cmake
-                   (company-dabbrev-code company-gtags company-etags company-keywords)
+                   (company-dabbrev-code ;; company-gtags company-etags
+                                         company-keywords)
                    company-oddmuse company-files company-dabbrev)))
 (set-variable 'dabbrev-case-fold-search t)
 (set-variable 'delete-selection-mode nil)

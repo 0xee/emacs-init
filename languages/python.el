@@ -12,6 +12,7 @@
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi)
   (local-set-key (kbd "C-c C-c") 'comment-region)
+  (local-set-key (kbd "C-c C-d") 'c-hungry-delete-forward)
   (local-set-key (kbd "C-c C-r") 'python-shell-send-buffer)
   (local-set-key (kbd "C-c z") 'jedi:goto-definition)
   (jedi-mode)
@@ -23,7 +24,8 @@
 
 ; use IPython
 (setq-default py-shell-name "ipython")
-(setq-default py-which-bufname "IPython")
+(setq-default py-shell-name "ipython")
+;(setq python-shell-interpreter "build/arch-pc/sandbox")
 ;; ; use the wx backend, for both mayavi and matplotlib
 ;; (setq py-python-command-args
 ;;   '("--gui=wx" "--pylab=wx" "-colors" "Linux"))

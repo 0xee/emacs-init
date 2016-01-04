@@ -48,8 +48,8 @@
 ;;  '(compilation-skip-threshold 2))
 
 ;; (custom-theme-set-faces
-;;  'wombat-customized
-;;  '(cursor ((t (:background "gray40"))))
+;;  'wombat
+;;  '(cursor ((t (:background "gray80"))))
 ;;  '(ido-first-match ((t (:weight extra-bold))))
 ;;  '(ido-only-match ((t (:foreground "ForestGreen" :weight bold))))
 ;;  '(ido-subdir ((t (:inherit font-lock-warning-face))))

@@ -6,13 +6,6 @@
       tab-width 2
       indent-tabs-mode nil)
 
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.ixx\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.cui\\'" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.cuh\\'" . c++-mode))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; C/C++ development
 
@@ -27,8 +20,20 @@
   (subword-mode)
   (flycheck-mode)
   (setq flycheck-clang-include-path
-        (list "." ".." "../.." "../../.."
+        (list "."
               (concat (projectile-project-root) "src")
+              (concat (projectile-project-root) "test")
+              (concat (projectile-project-root) "tests")
+              (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
+              "/opt/ims/include/netlib"
+              "/opt/ims/include/oasis"
+              "/opt/cuda/include"
+              "/opt/ofed/include"))
+  (setq flycheck-gcc-include-path
+        (list "."
+              (concat (projectile-project-root) "src")
+              (concat (projectile-project-root) "test")
+              (concat (projectile-project-root) "tests")
               (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
               "/opt/ims/include/netlib"
               "/opt/ims/include/oasis"

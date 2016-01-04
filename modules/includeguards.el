@@ -8,8 +8,8 @@
   (let ((ig-sym (includeguard-sym-name)))
     ;;(beginning-of-buffer)
     (end-of-buffer)
-    (insert "\n#ifndef _" ig-sym "_\n")
-    (insert "#define _" ig-sym "_\n\n")
-    (insert "\n#endif /* _" ig-sym "_ */\n")))
+    (insert "\n#ifndef " ig-sym "_\n")
+    (insert "#define " ig-sym "_\n\n")
+    (insert "\n#endif\n")))
 
 (provide 'includeguards)

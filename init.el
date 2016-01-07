@@ -38,6 +38,16 @@
 ;; import stuff like user name,...
 (load-file "~/.emacs.d/user.el")
 
+(add-to-list 'load-path "~/.emacs.d/el-get/helm-dash")
+(add-to-list 'load-path "~/.emacs.d/el-get/helm")
+(require 'helm-dash)
+
+
+(loop for d in '("C++" "Boost" "Python_2" "python-rasterizer")
+      do (helm-dash-activate-docset d))
+(global-set-key (kbd "C-<return>") 'helm-dash-at-point)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (require 'company)

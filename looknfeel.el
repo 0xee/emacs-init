@@ -55,13 +55,6 @@
 (load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)
 
-(require 'dedicated)
-(defun my-lock-buffer()
-  (interactive)
-  (dedicated-mode)
-  (emacs-lock-mode))
-(define-key global-map (kbd "C-x d") 'my-lock-buffer)
-
 (winner-mode 1)
 
 (global-set-key (kbd "<f5>")
@@ -108,6 +101,19 @@
 (defun kill-on-quit-hook ()
   (local-set-key (kbd "q") (lambda () (interactive) (quit-window t)))
   )
+
+
+(defun make-buffer-persistent ()
+  (interactive)
+  (if (member (buffer-name) '("*compilation*"
+                              "*scratch*"
+                              "*Flycheck errors*"))
+      (emacs-lock-mode))
+)
+
+(add-hook 'compilation-mode-hook 'make-buffer-persistent)
+(add-hook 'flycheck-error-list-mode-hook 'make-buffer-persistent)
+(add-hook 'lisp-interaction-mode-hook 'make-buffer-persistent)
 
 
 (add-hook 'compilation-mode-hook 'kill-on-quit-hook)

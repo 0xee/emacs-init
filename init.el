@@ -6,6 +6,7 @@
 
 (load-relative "external/xml-parse.el")
 
+
 ;; External modules
 (load-relative "external/xml-parse.el")
 (load-relative "external/noflet.el")
@@ -25,11 +26,13 @@
 (load-relative "looknfeel.el")
 (load-relative "editing.el")
 (load-relative "persistence.el")
+(load-relative "ide.el")
 
 ;; Languages
 (load-relative "languages/c.el")
 (load-relative "languages/python.el")
 (load-relative "languages/haskell.el")
+(load-relative "languages/cuda.el")
 
 (load-relative "custom.el")
 (load-relative "projectile-cfg.el")

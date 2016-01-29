@@ -33,7 +33,6 @@
 (setq auto-save-default nil)      ; disable auto-save feature
 
 
-
 ;; Colored compilation
 (define-derived-mode ansi-compilation-mode compilation-mode "ansi compilation"
   "Compilation mode that understands ansi colors."
@@ -78,11 +77,7 @@
 
 (require 'flycheck-tip)
 
-; TODO: make this work
-(define-key flycheck-mode-map flycheck-keymap-prefix nil)
-(setq flycheck-keymap-prefix (kbd "C-;"))
-(define-key flycheck-mode-map flycheck-keymap-prefix
-                flycheck-command-map)
+(define-key key-translation-map (kbd "C-;") (kbd "\C-c !"))
 
 (defun check-buffer()
   (interactive)

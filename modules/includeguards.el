@@ -5,7 +5,7 @@
   (upcase (file-name-nondirectory (buffer-file-name)))))
 
 (defun includeguard-generate () (interactive)
-  (let ((ig-sym (includeguard-sym-name)))
+       (let ((ig-sym (includeguard-sym-name)))
     ;;(beginning-of-buffer)
     (end-of-buffer)
     (insert "\n#ifndef " ig-sym "_\n")

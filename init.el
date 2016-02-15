@@ -3,6 +3,7 @@
 (require 'package)
 
 (load-file "~/.emacs.d/elpa/load-relative-1.2/load-relative.el")
+(load-file "~/.emacs.d/elpa/restart-emacs-0.1.1/restart-emacs.el")
 
 (load-relative "external/xml-parse.el")
 
@@ -36,6 +37,8 @@
 
 (load-relative "custom.el")
 (load-relative "projectile-cfg.el")
+
+
 
 
 ;; import stuff like user name,...

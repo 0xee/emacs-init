@@ -2,7 +2,7 @@
 (set-variable 'ag-arguments (quote ("--line-number" "--smart-case" "--column" "--nogroup")))
 (set-variable 'ag-highlight-search t)
 (set-variable 'ag-ignore-list (quote ("build/*" "*.ipynb" "core.*" "core")))
-(set-variable 'ag-project-root-function (quote project-root-helper))
+;(set-variable 'ag-project-root-function (quote project-root-helper))
 (set-variable 'ag-reuse-buffers t)
 (set-variable 'blink-cursor-mode nil)
 (set-variable 'c-syntactic-indentation t)

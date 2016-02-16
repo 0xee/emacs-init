@@ -20,3 +20,10 @@
 (global-set-key (kbd "C-c d i") 'doxymacs-insert-file-comment)
 (global-set-key (kbd "C-c d f") 'doxymacs-insert-function-comment)
 (global-set-key (kbd "C-c d m") 'doxymacs-insert-member-comment)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(global-set-key [M-S-up] 'enlarge-window)
+(global-set-key [M-S-down] (lambda () (interactive) (enlarge-window -1)))
+
+(global-set-key [M-S-right] 'enlarge-window-horizontally)
+(global-set-key [M-S-left] (lambda () (interactive) (enlarge-window-horizontally -1)))

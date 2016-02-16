@@ -79,10 +79,15 @@
            f)
           (t filename))))
 
-(setq compilation-parse-errors-filename-function 'process-error-filename)
 
+(setq compilation-parse-errors-filename-function 'process-error-filename)
 
 (require 'protobuf)
 
-
 (load-relative "keybindings.el")
+
+(add-hook 'ibuffer-hook
+    (lambda ()
+      (ibuffer-projectile-set-filter-groups)
+      (unless (eq ibuffer-sorting-mode 'alphabetic)
+        (ibuffer-do-sort-by-alphabetic))))

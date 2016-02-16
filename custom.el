@@ -79,7 +79,7 @@
 
 
 
-(set-face-foreground 'ido-subdir "ccaa8f")
+(set-face-foreground 'ido-subdir "#ccaa8f")
 (set-face-foreground 'ido-only-match "ForestGreen")
 (set-face-foreground 'error "firebrick2")
 (set-face-foreground 'compilation-info "#cae682")

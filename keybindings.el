@@ -27,3 +27,6 @@
 
 (global-set-key [M-S-right] 'enlarge-window-horizontally)
 (global-set-key [M-S-left] (lambda () (interactive) (enlarge-window-horizontally -1)))
+
+(global-set-key (kbd "M-n") 'highlight-symbol-next)
+(global-set-key (kbd "M-p") 'highlight-symbol-prev)

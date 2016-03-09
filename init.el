@@ -3,7 +3,9 @@
 (require 'package)
 
 (load-file "~/.emacs.d/elpa/load-relative-1.2/load-relative.el")
-(load-file "~/.emacs.d/elpa/restart-emacs-0.1.1/restart-emacs.el")
+(load-file "~/.emacs.d/elpa/restart-emacs-0.1/restart-emacs.el")
+
+(load-relative "packages.el")
 
 (load-relative "external/xml-parse.el")
 
@@ -23,7 +25,6 @@
 ;(load-relative "themes/wombat-customized.el")
 
 ;; Configuration
-(load-relative "packages.el")
 (load-relative "looknfeel.el")
 (load-relative "editing.el")
 (load-relative "persistence.el")
@@ -32,14 +33,16 @@
 ;; Languages
 (load-relative "languages/c.el")
 (load-relative "languages/python.el")
-(load-relative "languages/haskell.el")
+;(load-relative "languages/haskell.el")
 (load-relative "languages/cuda.el")
+(load-relative "languages/lisp.el")
 
 (load-relative "custom.el")
 (load-relative "projectile-cfg.el")
 
+(load-relative "prodigy.el")
 
-
+;(set-face-attribute 'default t :font "dejavu sans mono")
 
 ;; import stuff like user name,...
 (load-file "~/.emacs.d/user.el")

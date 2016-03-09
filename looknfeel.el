@@ -49,8 +49,8 @@
 (setq compilation-finish-function 'colorize-compilation)
 
 (require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-(define-key global-map (kbd "C-c l") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-line-mode)
+(setq ace-jump-mode-move-keys '(?a ?s ?w ?d))
 
 (load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)

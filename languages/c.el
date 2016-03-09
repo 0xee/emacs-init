@@ -13,6 +13,7 @@
   (local-set-key (kbd "C-c u") 'uncomment-region)
   (local-unset-key (kbd "C-c C-n"))
   (local-unset-key (kbd "C-c C-p"))
+  (highlight-symbol-mode t)
   (setq-local cc-search-directories
               (list "." "/usr/include" "/opt/ims/include" "~/svn/netlib/trunk/src"
                     (concat (projectile-project-root) "src")))
@@ -25,8 +26,8 @@
               (concat (projectile-project-root) "test")
               (concat (projectile-project-root) "tests")
               (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
-              "/opt/ims/include/netlib"
-              "/opt/ims/include/oasis"
+              "/usr/include/netlib"
+              "/usr/include/oasis"
               "/opt/cuda/include"
               "/opt/ofed/include"))
   (setq flycheck-gcc-include-path
@@ -35,8 +36,8 @@
               (concat (projectile-project-root) "test")
               (concat (projectile-project-root) "tests")
               (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
-              "/opt/ims/include/netlib"
-              "/opt/ims/include/oasis"
+              "/usr/include/netlib"
+              "/usr/include/oasis"
               "/opt/cuda/include"
               "/opt/ofed/include"))
 )

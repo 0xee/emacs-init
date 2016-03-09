@@ -14,64 +14,20 @@
 (define-key projectile-mode-map (kbd "C-c p A") 'projectile-ag-regexp)
 
 
-
-              ;; ("~/Desktop/"
-              ;;  ("OrangeRed3" "OrangeRed4")
-              ;;  "/home/lukas/emacs/"
-              ;;  ("DarkOrange3" "DarkOrange4")
-              ;;  "/home/shared/projects/hs-playground/blog/"
-              ;;  ("DodgerBlue3" "DodgerBlue4")
-              ;;  "/home/shared/projects/hs-playground/showinfo/"
-              ;;  ("IndianRed3" "IndianRed4")
-              ;;  "/home/shared/projects/hs-playground/portfolio/"
-              ;;  ("SlateBlue3" "SlateBlue4")
-              ;;  "/home/lukas/.emacs.d/elpa/restart-emacs-0.1.1/"
-              ;;  ("DarkOrchid3" "DarkOrchid4")
-              ;;  "/usr/share/info/"
-              ;;  ("maroon3" "maroon4")))
-
-
-(setq my-project-buffer-colors
-  '(
-    ("/home/lukas/emacs/" . ("OrangeRed3" "OrangeRed4"))
-    ("/home/shared/projects/hs-playground/portfolio/" . ("DarkOrange3" "DarkOrange4"))
-    ("/home/shared/projects/hs-playground/blog/" . ("DodgerBlue3" "DodgerBlue4"))
-    ("/home/shared/projects/hs-playground/showinfo/" . ("IndianRed3" "IndianRed4"))
-    )
-)
-
-(add-to-list 'my-project-buffer-colors '("/tmp/foo/" "PaleVioletRed3" "PaleVioletRed4"))
-
-(defun apply-project-color ()
+(defun project-color ()
   (if (projectile-project-p)
-      (progn
-        (message "In project")
-        (message (format "%s" my-project-buffer-colors))
-        (let ((pr-colors (assoc (projectile-project-root) my-project-buffer-colors)))
-          (message (format "%s" pr-colors))
-          (when pr-colors
-            (let ((colors (cdr pr-colors)))
-              (message (format "%s" colors))
-              (list (face-remap-add-relative 'mode-line (list :background (car colors)))
-                    (face-remap-add-relative 'mode-line-inactive (list :background (cadr colors)))
-                    )
-              )
-            )
-          )
-        )
-    )
+      (cdr (assoc (projectile-project-root) my-project-buffer-colors)))
   )
 
-(global-set-key (kbd "<f7>")
-  (lambda()(interactive)
-    (apply-project-color)))
-
-
-;(remove-hook 'projectile-mode-hook 'assign-project-color)
-;(add-hook 'projectile-mode-hook 'assign-project-color)
-
-
-
+(setq projectile-mode-line '(:eval (list " "
+ (propertize
+    (concat "["
+		  (projectile-project-name)
+		  "]")
+  'face
+  (plist-put () :background (project-color))
+  'help-echo
+  (buffer-file-name)))))
 
 
 

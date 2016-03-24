@@ -4,6 +4,7 @@
 
 (tool-bar-mode 0)                 ; disable tool bar
 (menu-bar-mode 0)                 ; disable menu bar
+(display-time-mode 1)                 ; disable menu bar
 (blink-cursor-mode 0)
 (windmove-default-keybindings)    ; switch windows with shift-arrow
 (fset 'yes-or-no-p 'y-or-n-p)     ; y/n instead of yes/no

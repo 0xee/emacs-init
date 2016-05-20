@@ -29,6 +29,7 @@
               "/usr/include/netlib"
               "/usr/include/oasis"
               "/opt/cuda/include"
+              "/usr/include/python2.7"
               "/opt/ofed/include"))
   (setq flycheck-gcc-include-path
         (list "."
@@ -39,6 +40,7 @@
               "/usr/include/netlib"
               "/usr/include/oasis"
               "/opt/cuda/include"
+              "/usr/include/python2.7"
               "/opt/ofed/include"))
 )
 

@@ -21,13 +21,15 @@
 (load-relative "modules/whitespace-cfg.el")
 (load-relative "modules/move-text.el")
 (load-relative "modules/date.el")
+(load-relative "modules/maly-mode.el")
 
-;(load-relative "themes/wombat-customized.el")
+(load-relative "themes/wombat-customized.el")
 
-;; Configuration
+;; ;; Configuration
 (load-relative "looknfeel.el")
 (load-relative "editing.el")
-(load-relative "persistence.el")
+
+;; (load-relative "persistence.el")
 (load-relative "ide.el")
 
 ;; Languages
@@ -40,29 +42,26 @@
 (load-relative "custom.el")
 (load-relative "projectile-cfg.el")
 
-(load-relative "prodigy.el")
-
 ;(set-face-attribute 'default t :font "dejavu sans mono")
 
 ;; import stuff like user name,...
 (load-file "~/.emacs.d/user.el")
 
-(add-to-list 'load-path "~/.emacs.d/el-get/helm-dash")
-(add-to-list 'load-path "~/.emacs.d/el-get/helm")
-(require 'helm-dash)
+;; (add-to-list 'load-path "~/.emacs.d/el-get/helm-dash")
+;; (add-to-list 'load-path "~/.emacs.d/el-get/helm")
+;; (require 'helm-dash)
 
 
-(loop for d in '("C++" "Boost" "Python_2" "python-rasterizer")
-      do (helm-dash-activate-docset d))
-(global-set-key (kbd "C-<return>") 'helm-dash-at-point)
-
+;; (loop for d in '("C++" "Boost" "Python_2" "python-rasterizer")
+;;       do (helm-dash-activate-docset d))
+;; (global-set-key (kbd "C-<return>") 'helm-dash-at-point)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (require 'company)
 (global-company-mode)
 
-
+(set-variable 'org-replace-disputed-keys t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Package Configuration
 

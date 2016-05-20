@@ -75,15 +75,16 @@
 (set-variable 'projectile-project-root-files-bottom-up (quote (".projectile" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "SConstruct" "setup.py")))
 (set-variable 'projectile-project-root-files-top-down-recurring (quote ("CVS" "SConscript")))
 (set-variable 'projectile-require-project-root t)
-(set-variable 'projectile-ignored-projects (quote ("/nfs/home"))
+(set-variable 'projectile-ignored-projects (quote ("/nfs/home/")))
 (set-variable 'projectile-globally-ignored-directories
    (quote
-    (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "build"))
+    (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "build")))
 (set-variable  'org-log-done (quote time))
 (set-variable 'ps-paper-type (quote a4))
 (set-variable 'ps-print-color-p nil)
 (set-variable 'python-shell-interpreter "ipython")
 (set-variable 'python-shell-interpreter "ipython")
+(set-variable 'python-fill-docstring-style 'django)
 (set-variable 'recentf-initialize-file-name-history t)
 (set-variable 'recentf-max-saved-items 8)
 (set-variable 'recentf-mode t)

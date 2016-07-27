@@ -11,6 +11,7 @@
 
 (defun my-c-hook ()
   (local-set-key (kbd "C-c u") 'uncomment-region)
+  (local-set-key (kbd "C-c h") 'projectile-find-other-file)
   (local-unset-key (kbd "C-c C-n"))
   (local-unset-key (kbd "C-c C-p"))
   (highlight-symbol-mode t)
@@ -25,6 +26,7 @@
               (concat (projectile-project-root) "src")
               (concat (projectile-project-root) "test")
               (concat (projectile-project-root) "tests")
+              (concat (projectile-project-root) "include")
               (concat (projectile-project-root) "build/arch-pc/Interface/ims/pb2")
               "/usr/include/netlib"
               "/usr/include/oasis"

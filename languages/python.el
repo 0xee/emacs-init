@@ -9,6 +9,9 @@
       (yes-or-no-p "Really kill *Pymacs* buffer? ")
     t))
 
+
+(flycheck-add-next-checker 'python-flake8 'python-pylint)
+
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi)
   (local-set-key (kbd "C-c C-c") 'comment-region)

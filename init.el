@@ -16,6 +16,7 @@
 (load-relative "external/kill-ring-ido.el")
 (load-relative "external/doxymacs.el")
 (load-relative "external/protobuf.el")
+(load-relative "external/flex-isearch.el")
 
 ;; Custom modules
 (load-relative "modules/whitespace-cfg.el")

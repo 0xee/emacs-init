@@ -2,12 +2,14 @@
 
 (require 'package)
 
-(load-file "~/.emacs.d/elpa/load-relative-1.2/load-relative.el")
-(load-file "~/.emacs.d/elpa/restart-emacs-0.1/restart-emacs.el")
+(defun rel2abs (rel)
+  (concat (file-name-directory (or load-file-name buffer-file-name)) rel)
+  )
 
-(load-relative "packages.el")
+(load-file (rel2abs "packages.el"))
 
-(load-relative "external/xml-parse.el")
+(package-require 'load-relative)
+(package-require 'restart-emacs)
 
 
 ;; External modules
@@ -24,8 +26,6 @@
 (load-relative "modules/date.el")
 (load-relative "modules/maly-mode.el")
 
-(load-relative "themes/wombat-customized.el")
-
 ;; ;; Configuration
 (load-relative "looknfeel.el")
 (load-relative "editing.el")
@@ -40,26 +40,16 @@
 (load-relative "languages/cuda.el")
 (load-relative "languages/lisp.el")
 
-(load-relative "custom.el")
 (load-relative "projectile-cfg.el")
-
-;(set-face-attribute 'default t :font "dejavu sans mono")
+(load-relative "jabber-cfg.el")
 
 ;; import stuff like user name,...
 (load-file "~/.emacs.d/user.el")
 
-;; (add-to-list 'load-path "~/.emacs.d/el-get/helm-dash")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/helm")
-;; (require 'helm-dash)
-
-
-;; (loop for d in '("C++" "Boost" "Python_2" "python-rasterizer")
-;;       do (helm-dash-activate-docset d))
-;; (global-set-key (kbd "C-<return>") 'helm-dash-at-point)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
-(require 'company)
+(package-require 'company)
+
 (global-company-mode)
 
 (set-variable 'org-replace-disputed-keys t)
@@ -73,13 +63,11 @@
 
 (defun process-error-filename (filename)
   (let ((case-fold-search t))
-    (setq f (replace-regexp-in-string "build/"
-                                      (projectile-project-root)
-                                       (replace-regexp-in-string "build/arch-pc/"
-                                                                (projectile-project-root)
-                                                                filename)))
-    (cond ((file-exists-p f)
-           f)
+    (setq f (replace-regexp-in-string
+             "build/" ""
+             (replace-regexp-in-string "build/arch-pc/" ""
+                                       filename)))
+    (cond ((file-exists-p f) f)
           (t filename))))
 
 
@@ -94,3 +82,15 @@
       (ibuffer-projectile-set-filter-groups)
       (unless (eq ibuffer-sorting-mode 'alphabetic)
         (ibuffer-do-sort-by-alphabetic))))
+
+
+(defun query-replace-repeat ()
+  (interactive)
+  (let ((from (car (cdr query-replace-history))) (to (car query-replace-history)))
+    (query-replace from to)
+    )
+  )
+
+(global-set-key (kbd "C-%") 'query-replace-repeat)
+
+(load-relative "custom.el")

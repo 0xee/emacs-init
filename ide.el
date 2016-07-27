@@ -9,6 +9,7 @@
   "Set up a simple IDE-like environment."
   (interactive)
   (flycheck-list-errors)
+  (compile "true")
   (delete-other-windows)
   (split-window-vertically -12)
   (other-window 1)
@@ -28,6 +29,7 @@
   "Set up a simple IDE-like environment."
   (interactive)
   (flycheck-list-errors)
+  (compile "true")
   (delete-other-windows)
   (split-window-horizontally 107)
   (other-window 1)
@@ -48,6 +50,7 @@
   "Set up a simple IDE-like environment."
   (interactive)
   (flycheck-list-errors)
+  (compile "true")
   (delete-other-windows)
   (split-window-horizontally)
   (split-window-horizontally)

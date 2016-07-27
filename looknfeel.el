@@ -15,7 +15,6 @@
 (show-paren-mode t)
 (setq show-paren-style 'expression)
 (ido-mode t)
-(set-face-background 'show-paren-match-face "#382C2C")
 
 (defun ask-before-closing ()
   "Ask whether or not to close, and then close if y was pressed"
@@ -49,14 +48,10 @@
 
 (setq compilation-finish-function 'colorize-compilation)
 
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-line-mode)
-(setq ace-jump-mode-move-keys '(?a ?s ?w ?d))
-
 (load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
 (define-key global-map (kbd "C-x z") 'zoom-window-zoom)
 
-(require 'dedicated)
+(package-require 'dedicated)
 ;; (defun lock-buffer()
 ;;   (interactive)
 ;;   (dedicated-mode)
@@ -84,7 +79,7 @@
 
 (global-flycheck-mode)
 
-(require 'flycheck-tip)
+(package-require 'flycheck-tip)
 
 (define-key key-translation-map (kbd "C-;") (kbd "\C-c !"))
 

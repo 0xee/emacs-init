@@ -1,5 +1,5 @@
 
-(require 'projectile)
+(package-require 'projectile)
 
 
 (projectile-global-mode t)
@@ -22,8 +22,8 @@
 (setq projectile-mode-line '(:eval (list " "
  (propertize
     (concat "["
-		  (projectile-project-name)
-		  "]")
+            (projectile-project-name)
+            "]")
   'face
   (plist-put () :background (project-color))
   'help-echo

@@ -20,8 +20,9 @@ Usage: (package-require 'package)"
 
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "http://melpa.org/packages/"))
 
 ;(set-variable 'package-load-list (quote ((el-get) all)))
 
 (package-initialize)
+;(package-refresh-contents)

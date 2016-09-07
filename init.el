@@ -10,7 +10,8 @@
 
 (package-require 'load-relative)
 (package-require 'restart-emacs)
-
+(package-require 'highlight-symbol)
+(package-require 'magit)
 
 ;; External modules
 (load-relative "external/xml-parse.el")
@@ -49,6 +50,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
 (package-require 'company)
+(package-require 'flycheck)
 
 (global-company-mode)
 

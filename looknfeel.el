@@ -48,9 +48,6 @@
 
 (setq compilation-finish-function 'colorize-compilation)
 
-(load-file "~/.emacs.d/el-get/zoom-window/zoom-window.el")
-(define-key global-map (kbd "C-x z") 'zoom-window-zoom)
-
 (package-require 'dedicated)
 ;; (defun lock-buffer()
 ;;   (interactive)
@@ -118,5 +115,5 @@
 (add-hook 'compilation-mode-hook 'kill-on-quit-hook)
 (add-hook 'diff-mode-hook 'kill-on-quit-hook)
 
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
+;(global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-x K") 'ido-kill-buffer)

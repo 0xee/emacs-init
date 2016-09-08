@@ -9,7 +9,7 @@
 ;; )
 (custom-theme-set-faces
  'wombat-customized
- '(default ((t (:foreground "#f6f3e8" :background "#2c2c2c" :font "Monospace"))))
+ '(default ((t (:foreground "#f6f3e8" :background "#2c2c2c" :family "Droid Sans Mono" :height 108))))
  '(cursor  ((t (:background "goldenrod2"))))
  '(ido-subdir ((t (:foreground "#ccaa8f"))))
  '(ido-only-match ((t (:foreground "ForestGreen"))))

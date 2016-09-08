@@ -8,10 +8,6 @@
 
 (load-file (rel2abs "packages.el"))
 
-(package-require 'load-relative)
-(package-require 'restart-emacs)
-(package-require 'highlight-symbol)
-(package-require 'magit)
 
 ;; External modules
 (load-relative "external/xml-parse.el")

@@ -26,3 +26,9 @@ Usage: (package-require 'package)"
 
 (package-initialize)
 ;(package-refresh-contents)
+
+(package-require 'load-relative)
+(package-require 'restart-emacs)
+(package-require 'highlight-symbol)
+(package-require 'magit)
+(package-require 'ag)

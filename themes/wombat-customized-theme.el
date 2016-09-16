@@ -9,7 +9,7 @@
 ;; )
 (custom-theme-set-faces
  'wombat-customized
- '(default ((t (:foreground "#f6f3e8" :background "#2c2c2c" :family "Droid Sans Mono" :height 108))))
+ '(default ((t (:foreground "#f6f3e8" :background "#2c2c2c" :family "mononoki" :height 110))))
  '(cursor  ((t (:background "goldenrod2"))))
  '(ido-subdir ((t (:foreground "#ccaa8f"))))
  '(ido-only-match ((t (:foreground "ForestGreen"))))
@@ -21,6 +21,7 @@
  '(jabber-roster-user-online ((t (:foreground "green" :slant normal :weight bold))))
  '(show-paren-match ((t (:background "#2C382C"))))
  '(jabber-activity-personal-face ((t (:background "dark orange" :foreground "white smoke" :weight bold))))
+ '(region ((t (:background "#8E7D53"))))
  )
 
 (provide-theme 'wombat-customized)

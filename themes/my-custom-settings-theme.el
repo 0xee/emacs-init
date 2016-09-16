@@ -87,6 +87,7 @@
  '(projectile-project-root-files-bottom-up (quote (".projectile" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "SConstruct" "setup.py")))
  '(projectile-project-root-files-top-down-recurring (quote ("CVS" "SConscript")))
  '(projectile-require-project-root t)
+ '(projectile-switch-project-action (quote projectile-find-file-or-magit))
  '(ps-paper-type (quote a4))
  '(ps-print-color-p nil)
  '(python-fill-docstring-style 'django)
@@ -105,7 +106,6 @@
  '(vc-log-show-limit 100)
  '(visible-cursor nil)
  '(void-text-area-pointer (quote arrow))
-
  )
 
 (provide-theme 'my-custom-settings)

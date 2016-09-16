@@ -33,3 +33,19 @@
 ;; This is needed to avoid slowdown when working with remote files.
 (defadvice projectile-project-root (around ignore-remote first activate)
     (unless (file-remote-p default-directory) ad-do-it))
+
+
+(defun projectile-find-file-or-magit (&optional arg)
+  "Jump to a project's file using completion.
+With a prefix ARG invalidates the cache first."
+  (interactive "P")
+  (projectile-maybe-invalidate-cache arg)
+  (let ((file (projectile-completing-read "Find file: "
+                                          (append (list "*magit*") (projectile-current-project-files)))))
+    (if (string= file "*magit*")
+        (magit-status-internal (projectile-project-root))
+      (progn (find-file (expand-file-name file (projectile-project-root)))
+             (run-hooks 'projectile-find-file-hook))
+      )
+    )
+  )

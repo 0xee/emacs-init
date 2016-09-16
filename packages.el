@@ -32,3 +32,5 @@ Usage: (package-require 'package)"
 (package-require 'highlight-symbol)
 (package-require 'magit)
 (package-require 'ag)
+(package-require 'company-irony)
+(package-require 'ibuffer-projectile)

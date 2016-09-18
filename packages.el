@@ -22,15 +22,16 @@ Usage: (package-require 'package)"
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
 
-;(set-variable 'package-load-list (quote ((el-get) all)))
-
 (package-initialize)
-;(package-refresh-contents)
+(package-refresh-contents)
 
 (package-require 'load-relative)
 (package-require 'restart-emacs)
+
 (package-require 'highlight-symbol)
 (package-require 'magit)
 (package-require 'ag)
 (package-require 'company-irony)
 (package-require 'ibuffer-projectile)
+(package-require 'flycheck)
+(package-require 'flycheck-tip)

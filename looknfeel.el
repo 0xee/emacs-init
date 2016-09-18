@@ -74,9 +74,10 @@
 
 (set-frame-parameter nil 'unsplittable t)
 
+
 (global-flycheck-mode)
 
-(package-require 'flycheck-tip)
+
 
 (define-key key-translation-map (kbd "C-;") (kbd "\C-c !"))
 

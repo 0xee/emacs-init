@@ -35,3 +35,5 @@ Usage: (package-require 'package)"
 (package-require 'ibuffer-projectile)
 (package-require 'flycheck)
 (package-require 'flycheck-tip)
+(package-require 'noflet)
+(package-require 'flex-isearch)

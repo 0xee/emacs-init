@@ -10,12 +10,7 @@
 
 
 ;; External modules
-(load-relative "external/xml-parse.el")
-(load-relative "external/noflet.el")
 (load-relative "external/kill-ring-ido.el")
-(load-relative "external/doxymacs.el")
-(load-relative "external/protobuf.el")
-(load-relative "external/flex-isearch.el")
 
 ;; Custom modules
 (load-relative "modules/whitespace-cfg.el")
@@ -36,6 +31,7 @@
 ;(load-relative "languages/haskell.el")
 (load-relative "languages/cuda.el")
 (load-relative "languages/lisp.el")
+(load-relative "languages/protobuf.el")
 
 (load-relative "projectile-cfg.el")
 (load-relative "jabber-cfg.el")

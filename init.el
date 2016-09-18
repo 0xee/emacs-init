@@ -40,8 +40,13 @@
 (load-relative "projectile-cfg.el")
 (load-relative "jabber-cfg.el")
 
-;; import stuff like user name,...
-(load-file "~/.emacs.d/user.el")
+(defconst user-init-file "~/.emacs.d/user.el")
+
+(unless (file-exists-p user-init-file)
+  (write-region "" nil user-init-file))
+
+;; import stuff like user name, accounts, etc.
+(load-file user-init-file)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff

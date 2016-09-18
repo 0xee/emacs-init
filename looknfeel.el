@@ -48,11 +48,6 @@
 
 (setq compilation-finish-function 'colorize-compilation)
 
-(package-require 'dedicated)
-;; (defun lock-buffer()
-;;   (interactive)
-;;   (dedicated-mode)
-;;   (emacs-lock-mode))
 (define-key global-map (kbd "C-x d") 'dedicated-mode)
 
 (winner-mode 1)
@@ -118,3 +113,5 @@
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-x K") 'ido-kill-buffer)
+
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)

@@ -30,13 +30,14 @@
 (load-relative "languages/python.el")
 ;(load-relative "languages/haskell.el")
 (load-relative "languages/cuda.el")
-(load-relative "languages/lisp.el")
 (load-relative "languages/protobuf.el")
 
 (load-relative "projectile-cfg.el")
 (load-relative "jabber-cfg.el")
 
 (defconst user-init-file "~/.emacs.d/user.el")
+(setq custom-file (rel2abs "custom.el"))
+(load custom-file)
 
 (unless (file-exists-p user-init-file)
   (write-region "" nil user-init-file))
@@ -44,10 +45,12 @@
 ;; import stuff like user name, accounts, etc.
 (load-file user-init-file)
 
+(setq custom-safe-themes t)
+(add-to-list 'custom-theme-load-path (rel2abs "themes"))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Common development stuff
-(package-require 'company)
-(package-require 'flycheck)
 
 (global-company-mode)
 

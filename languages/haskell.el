@@ -20,7 +20,4 @@
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 
-(add-hook 'haskell-mode-hook 'highlight-symbol-mode)
-
-
 ;(load-file "~/.emacs.d/el-get/hamlet-mode/hamlet-mode.el")

@@ -14,7 +14,6 @@
   (local-set-key (kbd "C-c h") 'projectile-find-other-file)
   (local-unset-key (kbd "C-c C-n"))
   (local-unset-key (kbd "C-c C-p"))
-  (highlight-symbol-mode t)
   (setq-local cc-search-directories
               (list "." "/usr/include" "/opt/ims/include" "~/svn/netlib/trunk/src"
                     (concat (projectile-project-root) "src")))

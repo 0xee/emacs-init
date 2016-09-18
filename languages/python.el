@@ -1,6 +1,4 @@
 
-(package-require 'company-jedi)
-
 (setq auto-mode-alist(cons '("SConstruct" . python-mode) auto-mode-alist))
 (setq auto-mode-alist(cons '("SConscript" . python-mode) auto-mode-alist))
 
@@ -20,7 +18,6 @@
   (local-set-key (kbd "C-c C-r") 'python-shell-send-buffer)
   (local-set-key (kbd "C-c z") 'jedi:goto-definition)
   (jedi-mode)
-  (highlight-symbol-mode t)
   )
 
 (add-hook 'python-mode-hook 'my/python-mode-hook)
